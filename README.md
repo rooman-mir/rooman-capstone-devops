@@ -2,172 +2,148 @@
 
 # 🛒 Mir's One-Stop Store
 
-A modern e-commerce shopping cart application built with React + Vite, containerized with Docker, and automated with GitHub Actions CI/CD pipeline.
+A modern e-commerce shopping cart application built with React + Vite, featuring full-screen responsive design and automated CI/CD pipeline using GitHub Actions.
 
 ## 📋 Project Overview
 
-This project demonstrates a complete DevOps workflow:
+This project demonstrates a complete DevOps workflow using **100% free tools**:
 
-- ✅ **Frontend:** React with Vite
-- ✅ **Testing:** Vitest for unit tests
-- ✅ **Code Quality:** ESLint
-- ✅ **Containerization:** Docker with Nginx
-- ✅ **CI/CD:** GitHub Actions
+- ✅ **Frontend:** React 19 + Vite (modern build tool)
+- ✅ **Testing:** Vitest with comprehensive test coverage
+- ✅ **Code Quality:** ESLint for static analysis
+- ✅ **CI/CD:** GitHub Actions (free tier)
+- ✅ **Deployment:** GitHub Pages (free hosting)
+- ✅ **Artifact Management:** GitHub Actions artifacts
+- ✅ **Release Management:** Automated versioning with Git tags
 
 ## 🚀 Features
 
+- **Full-screen responsive design** - Optimized for all screen sizes
 - View products with images, descriptions, and prices
 - Add products to shopping cart
 - Update quantities (increase/decrease)
 - Remove items from cart
-- View cart total
-- Clear entire cart
+- Real-time cart total calculation
+- Clear entire cart functionality
+- **6 sample products** across Electronics, Sports, and Home categories
 
 ## 🛠️ Prerequisites
 
-Make sure you have these installed:
-
 - [Node.js](https://nodejs.org/) (v20 or higher)
 - [npm](https://www.npmjs.com/) (v10 or higher)
-- [Docker](https://www.docker.com/products/docker-desktop/) (for containerization)
 - [Git](https://git-scm.com/)
 
-## 📦 Installation
+## 📦 Quick Start
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/mirrooma/capstone.git
-   cd capstone
+```bash
+# Clone the repository
+git clone https://github.com/rooman-mir/rooman-capstone-devops.git
+cd rooman-capstone-devops
 
-2. Install dependencies:
+# Install dependencies
 npm install
 
-🏃 Running the Application
-
-Development Mode:
+# Start development server
 npm run dev
-Open http://localhost:5173 in your browser.
+# Open http://localhost:5173
+```
 
-Production Build:
-npm run build
-npm run preview
+## 🧪 Testing & Quality
 
-🧪 Running Tests:
+```bash
+# Run tests
 npm test
-To run tests once (without watch mode):
-npm test -- --run
 
-🔍 Linting:
+# Run tests with coverage
+npm run test:coverage
+
+# Run linting
 npm run lint
 
-🐳 Docker:
-Build Docker Image
-docker build -t devops-ecommerce .
+# Build for production
+npm run build
+```
 
-Run Docker Container:
-docker run -d -p 3000:80 --name ecommerce-container devops-ecommerce
-Open http://localhost:3000 in your browser.
+## 🔄 CI/CD Pipeline
 
-Stop and Remove Container:
-docker stop ecommerce-container
-docker rm ecommerce-container
-Using Docker Compose
-
-# Start
-docker-compose up -d
-
-# Stop
-docker-compose down
-📁 Project Structure
-
-capstone/
-├── .github/
-│   └── workflows/
-│       └── ci.yml           # GitHub Actions CI/CD pipeline
-├── public/                  # Static assets
-├── src/
-│   ├── components/          # React components
-│   │   ├── Cart.jsx
-│   │   ├── CartItem.jsx
-│   │   ├── ProductCard.jsx
-│   │   └── ProductList.jsx
-│   ├── context/
-│   │   └── CartContext.jsx  # State management
-│   ├── data/
-│   │   └── products.json    # Product data
-│   ├── App.jsx              # Main component
-│   ├── App.css              # Styles
-│   ├── App.test.jsx         # Unit tests
-│   └── main.jsx             # Entry point
-├── .dockerignore
-├── .gitignore
-├── docker-compose.yml
-├── Dockerfile
-├── eslint.config.js
-├── index.html
-├── nginx.conf
-├── package.json
-├── README.md
-└── vite.config.js
-
-## 🔄 CI/CD Pipeline (Free GitHub Actions)
-
-The pipeline automatically runs on every push and includes:
+Automated pipeline runs on every push:
 
 ### 1. **Test & Quality Checks**
-- ✅ Checkout code
-- ✅ Install dependencies (npm ci)
-- ✅ Run ESLint (Static Analysis)
-- ✅ Run unit tests with coverage
-- ✅ Upload coverage reports
+- Install dependencies
+- ESLint static analysis
+- Comprehensive unit tests
+- Upload coverage reports
 
 ### 2. **Build Application**
-- ✅ Build production bundle
-- ✅ Upload build artifacts
-- ✅ Artifact retention (30 days)
+- Production build
+- Artifact storage (30 days)
 
-### 3. **Deploy to Staging**
-- ✅ Deploy to GitHub Pages (free hosting)
-- ✅ Automatic deployment on main branch
-- ✅ Live staging environment
+### 3. **Deploy to GitHub Pages**
+- Automatic deployment on main branch
+- Live staging environment
 
 ### 4. **Release Management**
-- ✅ Automated versioning with Git tags
-- ✅ Generate release notes
-- ✅ Create GitHub releases
-- ✅ Upload release assets
+- Git tag-based versioning
+- Automated release notes
+- Release asset uploads
 
 ## 🚀 Creating Releases
 
 ```bash
-# Create a patch release (1.0.0 → 1.0.1)
+# Patch release (1.0.0 → 1.0.1)
 ./release.sh patch
 
-# Create a minor release (1.0.0 → 1.1.0)
+# Minor release (1.0.0 → 1.1.0)
 ./release.sh minor
 
-# Create a major release (1.0.0 → 2.0.0)
+# Major release (1.0.0 → 2.0.0)
 ./release.sh major
 ```
 
-## 📊 Artifact Management
+## 📁 Project Structure
 
-- **Build Artifacts**: Stored in GitHub Actions (30 days retention)
-- **Coverage Reports**: Generated and uploaded automatically
-- **Release Assets**: Attached to GitHub releases
-- **Deployment**: GitHub Pages (free static hosting)
-🧰 Technologies Used
-Technology	Purpose
-React 19	Frontend framework
-Vite	Build tool
-Vitest	Testing framework
-ESLint	Code linting
-Docker	Containerization
-Nginx	Production server
-GitHub Actions	CI/CD automation
+```
+├── .github/workflows/ci.yml    # CI/CD pipeline
+├── src/
+│   ├── components/             # React components
+│   ├── context/               # State management
+│   ├── data/products.json     # Sample data
+│   ├── app.test.js           # Test suite
+│   └── App.jsx               # Main component
+├── vite.config.js            # Build configuration
+├── package.json              # Dependencies
+└── release.sh               # Version management
+```
 
-👤 Owner
-Rooman Mir
+## 🧰 Technology Stack
 
-📄 License
-This project is for Evaluation as part of a DevOps learning within the SEED Academy Course.
+| Technology | Purpose |
+|------------|----------|
+| React 19 | Frontend framework |
+| Vite | Build tool & dev server |
+| Vitest | Testing framework |
+| ESLint | Code quality |
+| GitHub Actions | CI/CD automation |
+| GitHub Pages | Free hosting |
+
+## 🎯 DevOps Best Practices Demonstrated
+
+- **Automated Testing:** Unit tests with coverage reporting
+- **Static Analysis:** ESLint integration in CI
+- **Artifact Management:** Build artifacts with retention policies
+- **Release Automation:** Git tag-based releases
+- **Environment Management:** Staging deployment
+- **Code Quality Gates:** Tests must pass before deployment
+
+## 🌐 Live Demo
+
+View the live application: [GitHub Pages Deployment](https://rooman-mir.github.io/rooman-capstone-devops/)
+
+## 👤 Author
+
+**Rooman Mir**  
+DevOps Capstone Project - SEED Academy Course
+
+---
+
+*This project showcases a complete software development lifecycle from code to production deployment using modern DevOps practices and free cloud services.*
