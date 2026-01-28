@@ -4,29 +4,23 @@ import react from '@vitejs/plugin-react'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: process.env.NODE_ENV === 'production' ? '/capstone/' : '/',
+  base: process.env.NODE_ENV === 'production' ? '/rooman-capstone-devops/' : '/',
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
     sourcemap: true
   },
   test: {
-    globals: true,
     environment: 'jsdom',
-    setupFiles: './src/setupTests.js',
+    include: ['**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
     coverage: {
       provider: 'v8',
       reporter: ['text', 'json', 'html', 'lcov'],
       exclude: [
         'node_modules/',
-        'src/setupTests.js',
-        '**/*.config.js',
-        'dist/'
+        'dist/',
+        '**/*.config.js'
       ]
-    },
-    alias: {
-      'react': 'react',
-      'react-dom': 'react-dom'
     }
   },
 })
